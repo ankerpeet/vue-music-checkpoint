@@ -14,7 +14,7 @@ var cors = require('cors')
 server.use(sessions)
 server.use(cors())
 server.options('*', cors())
-//server.use(express.static(__dirname + "../public/"))
+server.use(express.static(__dirname + "/../public/"))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 
