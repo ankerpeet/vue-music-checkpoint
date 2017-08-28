@@ -5,7 +5,7 @@ var sessions = require('./authentication/sessions')
 var authRoutes = require('./authentication/auth-routes')
 var listRoutes = require('./routes/favorites-routes')
 var server = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var cors = require('cors')
 
 
@@ -14,7 +14,7 @@ var cors = require('cors')
 server.use(sessions)
 server.use(cors())
 server.options('*', cors())
-//server.use(express.static(__dirname + "/public"))
+//server.use(express.static(__dirname + "../public/"))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 
